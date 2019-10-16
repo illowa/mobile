@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="http://www.illowa.org/sam/admin/include/combinefe17fe17.css?b=/&amp;type=css&amp;cache=1&amp;min=1&amp;files=/sam/admin/include/trinkets/BannerTrinket/style.css,/sam/admin/include/trinkets/StoryTrinket/style.css" /><script src="http://www.illowa.org/sam/admin/include/scripts/jquery.min.js"></script><script src="http://www.illowa.org/sam/admin/include/combineafdfafdf.html?b=/&amp;type=javascript&amp;cache=1&amp;min=1&amp;files=/sam/admin/include/trinkets/NavTrinket/navigation.js"></script><script>
+	dataLayer = [{"sportType":"Soccer","orgName":"ILLOWA YOUTH SOCER","orgId":"4010","pageUrl":"www.illowa.org","pageType":"\/home.php","bluestarProperty":"Bonzi"}];
+</script>
+
+
+	<link rel="stylesheet" type="text/css" href="http://www.illowa.org/sam/front_core_files/templates/FullWidthHeaderLayout/css/reset.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="http://www.illowa.org/sam/front_core_files/css/default.css" media="screen,print" />
+	<link rel="stylesheet" type="text/css" href="http://www.illowa.org/sam/front_core_files/templates/FullWidthHeaderLayout/css/style.css" media="screen,print" />
+	<link rel="stylesheet" type="text/css" href="http://www.illowa.org/sam/front_core_files/templates/FullWidthHeaderLayout/css/left_column.css" media="screen,print" />
+	<link rel="stylesheet" type="text/css" href="http://www.illowa.org/sam/front_core_files/templates/FullWidthHeaderLayout/css/extra.css"/>	<link rel="stylesheet" type="text/css" href="http://www.illowa.org/cm/layout/css/overrides.css" media="screen,print" />
+</head>
+<body class="layout_leftcolumn">
+
+    <!--// begin header //-->
+	<div class="header">
+				<div class="hdr_name">ILLOWA YOUTH SOCCER</div>
+		<a href="http://www.illowa.org/"><div class="header_home_link"></div></a>
+		<!--<a href="http://www.illowa.org/sam/registration/login.html" title="Member Login" class="member_login"></a> -->
+	</div>
+	<!--// end header //-->
+
+	<!--// begin horizontal navbar //-->
+	<div class="hnav">
+		<div class="hmenu">
+			<ul class="cssMenu cmDown" id="frontMenu-Main Menu" ><li id="mb-461765" class=" cmFirst "><a class="button-text" href="http://www.illowa.org/" style="" target="_top">Home</a><span class="iefix">&nbsp;</span></li></ul>			<br style="clear:both;"/>
+		</div>
+	</div>
+	<!--// end horizontal navbar //-->
+
+    <!--// begin full width content //-->
+	<div class="fullwidthcontainer">
+				<div class="wgt_container">
+			<div class="top">
+				<div class="right">
+					<div class="content">
+						Schedule by Location & Referees											
+						</div>
+				</div>
+			</div>
+			<div class="mid">
+				<div class="right">
+					<div class="content" align="left">
+						<div class="ST_StoryTrinket">
+						<!--// LANDON'S CONTENT START //-->
+
+<TABLE border="0" cellspacing="1">
+<TR><TD nowrap align=center><FONT FACE="arial" size="4"><B>Location:</B></TD></TR>
+<TR><TD nowrap><FONT FACE="arial" size="3">&nbsp;&nbsp;&nbsp;&nbsp<a href="schedulebycomplex-Bettendorf.html">Bettendorf</a></TD></TR>
+<TR><TD nowrap><FONT FACE="arial" size="3">&nbsp;&nbsp;&nbsp;&nbsp<a href="schedulebycomplex-Dubuque.html">Dubuque</a></TD></TR>
+<TR><TD nowrap><FONT FACE="arial" size="3">&nbsp;&nbsp;&nbsp;&nbsp<a href="schedulebycomplex-East Moline.html">East Moline</a></TD></TR>
+<TR><TD nowrap><FONT FACE="arial" size="3">&nbsp;&nbsp;&nbsp;&nbsp<a href="schedulebycomplex-Galesburg.html">Galesburg</a></TD></TR>
+<TR><TD nowrap><FONT FACE="arial" size="3">&nbsp;&nbsp;&nbsp;&nbsp<a href="schedulebycomplex-Geneseo.html">Geneseo</a></TD></TR>
+<TR><TD nowrap><FONT FACE="arial" size="3">&nbsp;&nbsp;&nbsp;&nbsp<a href="schedulebycomplex-Moline.html">Moline</a></TD></TR>
+<TR><TD nowrap><FONT FACE="arial" size="3">&nbsp;&nbsp;&nbsp;&nbsp<a href="schedulebycomplex-Sterling.html">Sterling</a></TD></TR>
+</TABLE>
+						
+						<!--// LANDON'S CONTENT END //-->
+						</div>					</div>
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="right">
+					<div class="content">
+						&nbsp;
+					</div>
+				</div>
+			</div>
+		</div>
+			</div>
+    <!--// end full width content //-->
+
+<div class="mainContainer clearfix">
+
+	<!--// begin content //-->
+	<div class="content_bg">
+
+		<!--// begin left column //-->
+		<div class="col_left" align="center">
+			<div class="col_left_top"></div>
+
+			<!--// begin widget container //-->
+						<!--// end widget container //-->
+
+		</div>
+		<!--// end leftcolumn //-->
+
+		<!--// begin center column //-->
+		<div class="col_ctr" align="center">
+			<div class="col_ctr_top"></div>
+
+			<!--// begin widget container //-->
+			<div class="sam_banner"></div>			<!--// end widget container //-->
+
+		</div>
+		<!--// end center column //-->
+
+		<div class="clearfix"></div>
+
+	</div>
+	<!--// end content //-->
+
+</div>
+<!--// end #mainContainer //-->
+
+	<!--// begin footer //-->
+	<div class="footer" align="right">
+				<div class="wgt_container">
+			<div class="top">
+				<div class="right">
+					<div class="content">
+											</div>
+				</div>
+			</div>
+			<div class="mid">
+				<div class="right">
+					<div class="content" align="left">
+								<div class="bonzi_logo">
+			<a href="http://www.gobonzi.com/" rel="nofollow"><img src="http://www.illowa.org/cm/layout/images/bonzi_logo.png" alt="Online Sports Management Software by Bonzi" border="0" /></a>
+		</div>
+		<div class="footer_content">
+				Copyright &copy; 2001 - 2017 ILLOWA YOUTH SOCER. All Rights Reserved.<br />
+		</div>
+						</div>
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="right">
+					<div class="content">
+						&nbsp;
+					</div>
+				</div>
+			</div>
+		</div>
+			</div>
+	<!--// end footer //-->
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1357adfab6","applicationID":"57470549,57469915","transactionName":"YwdXZxBRCxJUW01QCVpNYEELHw0OWF0XSQ5E","queueTime":0,"applicationTime":64,"atts":"T0BUEVhLGBw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+</html>
+
